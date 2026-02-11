@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<script>
+			var name;	// name variable for visitor's name
+			var index = 0; // array index for which image shows
+			var images = [];  // array of images
+			var time = 3000;  // length of time each image shows
+			
+			// Load the array
+			images[0] = "images\\slides\\image1.jpg"
+			images[1] = "images\\slides\\image2.jpg"
+			images[2] = "images\\slides\\image3.jpg"
+			images[3] = "images\\slides\\image4.jpg"
+			images[4] = "images\\slides\\image5.jpg"
+			images[5] = "images\\slides\\image6.jpg"
+			
+		function countdown() {
+			var now = new Date()	// instantiate a new date object for today
+			var eventDate = new Date("August 26, 2025") // instantiate a date object for target date
+			var factor = 1/(1000*60*60*24);  // conversion factor for ms to days
+			var count = Math.ceil((eventDate - now) * factor); // round the number of days up
+			document.write(count);		// Write the output
+		}
+		
+		function quoteGenerator() {
+			var quotes = new Array()	// array of dog quotes
+			var index = Math.floor(Math.random()*5) // random number to choose the quote
+			// Load the array
+			quotes[0] = "Dogs are not our whole life, but they make our lives whole. - Roger Caras";
+			quotes[1] = "The average dog is a nicer person than the average person. - Andy Rooney";
+			quotes[2] = "The love of a dog is a pure thing. He gives you a trust which is total. You must not betray it. - Michel Houellebecq";
+			quotes[3] = "A dog is the only thing on earth that loves you more than he loves himself. - Josh Billings";
+			quotes[4] = "Happiness is a warm puppy. - Charles M. Schulz";
+			// Write the output
+			document.write(quotes[index]); 
+		}
+		
+		function slideShow() {
+			document.slide.src = images[index];
+			if (index < images.length -1) {
+				index++;
+			} else {
+				index = 0;
+			}
+			setTimeout("slideShow()", time)
+		}
+		
+		name = prompt("Enter your name: ");
+		alert("Welcome, " + name + "!")
+		window.onload = slideShow;
+	</script>
+	<link rel="icon" href="favicon.ico" type="image/x-icon" />
+	<link rel="stylesheet" href="styles.css">
+	<title>Aesch Canine Services</title>
+</head>
+<body>
+	<div id="grid-wrapper">
+    <header><h1>Aesch Canine Services</h1></header>
+    	<nav>
+			<ul>
+				<li><a href="index.html">Home</a> &nbsp;</li>
+				<li><a href="resources.html">Resources</a>&nbsp;</li>
+				<li><a href="gallery.html">Gallery</a>&nbsp;</li>
+				<li><a href="staffdirectory.html">Staff</a>&nbsp;</li>
+				<li><a href="customerform.html">Contact</a>&nbsp;</li>
+			</ul>
+    	</nav>
+    <main>
+    	<p id="countdown">There are only 
+    		<script>countdown();</script>
+    		 more days until National Dog Day!
+    	</p>
+		<h2>Serving the Aesch Community</h2>
+		<p>We are here to serve dogs, dog owners, and animal lovers as well as our <strong>community</strong>.</p>
+		<h2>Caring Staff</h2>
+		<p>Our staff is comprised of local experts and volunteers who share an affection for dogs of all breeds and backgrounds.</p>
+		<div id="box">
+			<h2>Our Services:</h2>
+			<ul>
+			 <dl>
+			  <li><dt>Grooming</dt></li>
+			  <dd>Keep your dog clean and healthy with a bath, brushing, fur clip, ear cleaning, nail trim, and teeth brushing.</dd>
+			  <li><dt>Boarding</dt></li>
+			  <dd>Give your dog a vacation while you are away. Allow them to socialize in a comfortable and safe environment with new friends.</dd>
+			  <li><dt>Fostering</dt></li>
+			  <dd>We provide a safe, loving environment with care and attention until for orphans until they find their forever home</dd>
+			  <li><dt>Adoption</dt></li>
+			  <dd>We work with local shelters, Petco, and Petsmart to place our fosters in permanent homes.</dd>
+			 </dl>
+			</ul>
+		</div>
+		<p id="quote"><script>quoteGenerator();</script></p>
+		<div id="slide">
+			<img class="firstborder" name="slide" width="300" height="400" src="images\slides\image1.jpg">
+		</div>
+		<div id="vid">
+			<video controls="controls" width="270" height="480">
+				<source src="images\dogs\dogvac.mp4" type="video/mp4">
+				<source src="images\dogs\dogvac.ogv" type="video/mp4">
+				<a href="images\dogs\dogvac.mp4">Dog getting blown dry</a> (mp4)
+			</video>
+			<br>
+		</div>
+		<div id="vid1">
+			<iframe width="280" height="157" src="https://www.youtube.com/embed/2RY5dYQir1Q?si=ubT522Hbt8kVmlSG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+		</div>
+    </main>
+   <footer>
+      <h6><em>Copyright &copy; 2024 Aesch Canine Services.</em> Contact us - 
+      	<a href="mailto:john@acs.dog">John@ACS.dog</a></h6>
+	  <h6>Last Modified: 
+	  <script>
+		document.write(document.lastModified);
+	  </script>
+	  </h6>
+  </footer>
+  </div>
+</body>
+</html>
