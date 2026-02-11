@@ -1,0 +1,202 @@
+* {box-sizing: border-box;} /*	Make Compatible with MS */
+
+/* Page Section Tags */
+header {  text-align: center;
+		  text-shadow: 1px 1px #000000;
+		  background-image: url("images/dog_pano3.png");
+		  background-repeat: no-repeat;
+		  background-size: cover;
+		  background-color: #e0e2ca;
+		  grid-row: 1 / 2;
+		  grid-column: 1 / 3;
+}
+nav {	padding: 2px;
+		font-size: 1.25em;
+		color: #ffffff;
+		background-color: #000000;
+		opacity: 0.3;
+		grid-row: 2 / 3;
+		grid-column: 1 / 2;
+}
+body {
+		background: url("images/cross.jpg");
+		background-repeat: repeat;
+		background-size: 10px 10px;
+		grid-row: 2 / 3;
+		grid-column: 2 / 3;
+}
+footer { grid-row: 3 / 5;
+		 grid-column: 1 / 3;
+		 text-align: center;
+		 background-color: #000000;
+		 opacity: 0.3;
+		 color: #FFFFFF;
+}
+main { padding: 5px;
+}
+
+/* Anchor Tags Section */
+a:link { text-decoration: none;
+		 color: #000000;
+}
+a:visited { text-decoration: none;
+			color: #000000;
+}
+a:hover { font-weight: bold;
+		  font-style: italic;
+}
+footer a:link {text-decoration: none;
+		 color: #ffffff;
+}
+
+/* Heading Tags Section */
+h1 { font-family: Georgia, Arial, serif; 
+	 color: white;
+	 font-size: 4em;
+}
+
+/* Navigation Tags Section */
+nav a:link { text-decoration: none;
+		 color: #FFFFFF;
+}
+nav ul { list-style-type: none;
+	 list-style-image: url("images/bullet-12.jpg");
+}
+nav li a:visited { border: 2px #FFFFFF;
+				   text-decoration: none;
+				   color: #FFFFFF;
+}
+nav li a:hover { border: 2px #FFFFFF;
+				 font-weight: bold;
+				 font-style: italic;
+}
+table { margin-left: auto;
+    	margin-right: auto;
+    	width: 500px;
+    	border-spacing: 0;
+    	color: #000000;
+    	font-size: 20px;
+}
+td { padding-left: 5px;
+	 text-align: center; 
+}
+tr:nth-of-type(even) {	background-color: #000000;
+						opacity: 0.3;
+						color: #FFFFFF;
+}
+tr a:link {	color: #FFFFFF;
+}
+caption { font-weight: bold;
+		  font-size: 2em;
+}
+legend { font-size: 2em;
+		 font-weight: bold;
+}
+
+/* IDs Section */
+/*	Set 2 column, 3 row layout using grid template method */
+#grid-wrapper {  display: grid;
+				 background-color: #FFFFFF;
+	        	 width: 1024px;
+				 margin: auto;
+				 grid-template-columns: 150px 874px;
+				 grid-template-rows: 150px auto 50px;
+} 
+#box {  border: 2px 2px 5px 5px #000000;
+		padding: 20px;
+}
+#box2 { border: 1px solid #000000;
+		padding: 10px;
+}
+#vid {	width: 560px;
+		margin-left: auto;
+		margin-right: auto;
+		padding-left: 5px;
+}
+#vid1 {	width: 560px;
+		margin-left: auto;
+		margin-right: auto;
+		padding-left: 0;
+}
+
+#countdown	{ color: red; 
+	  		  text-align: center;
+	  		  font-weight: bold;
+	  		  font-size: 2em; 
+}
+
+#quote	{ margin-left: auto;
+		  margin-right: auto;
+		  width: 800px;
+		  padding: 10px;
+		  border: 2px solid red;
+		  font-size: 1.5em;
+}
+
+#slide	{ margin-left: auto;
+		  margin-right: auto;
+		  padding: 10px;
+		  width: 350px;
+}
+
+/*	Classes Section */
+.firstborder { border-width: 2px; 
+			   border-style: solid; 
+			   border-color: black;
+}
+.secondborder { border-width: 2px; 
+				border-style: double; 
+				border-color: blue;
+				position: relative;
+				right: 50px;
+				top: 20px;
+}
+.thirdborder { border-width: 2px; 
+				border-style: solid; 
+				border-color: black;
+				position: relative;
+				right: 75px;
+}
+.resources { float: right;
+			 padding-right: 10px;
+}
+
+/*	Change Display for Mobile Devices */
+@media only screen and (max-width: 768px) {
+	header {  grid-row: 1 / 2;
+		  	  grid-column: 1 / 3;
+			}
+	nav { grid-row: 2 / 3; grid-column: 1 / 3; 
+		  text-align: center; }
+	nav ul { list-style-type: none;
+			 list-style-image: none; }
+	main { grid-row: 3 / 4; grid-column: 1 / 3; }
+	footer { grid-row: 4 / 5; grid-column: 1 / 3; }
+
+	h1 { font-size: 300%; }
+	h2 { font-size: 100%; }
+	p { font-size: 90%; }
+
+	#grid-wrapper {  display: grid;
+				 	 background-color: #FFFFFF;
+	        	 	 width: auto;
+				 	 margin: auto;
+				 	 grid-template-columns: auto auto;
+				 	 grid-template-rows: 150px auto auto 50px; } 
+
+	.resources { display: none; }
+	.firstborder { border-width: 2px; 
+			   border-style: solid; 
+			   border-color: black; }
+	.secondborder { border-width: 2px; 
+				border-style: double; 
+				border-color: blue;}
+	.thirdborder { border-width: 2px; 
+				border-style: solid; 
+				border-color: black;}
+	table { width: 90%;
+			border: none; 
+			font-weight: bold;
+			font-size: 14px; }
+	caption { font-size: 1em;}
+}
